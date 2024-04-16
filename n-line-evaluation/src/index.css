@@ -11,9 +11,9 @@ html {
 }
 
 body {
-    width: 360px;
-    height: 100vh;
+    max-width: 550px;
     margin: auto;
+    height: 100vh;
     background-image: url('./assets/imgs/background.png');
     background-position: center;
     background-size: cover;
@@ -31,8 +31,9 @@ body {
 }
 
 .fontSize_title {
-    font-size: 26px;
-    font-weight: bolder;;
+    font-size: 24px;
+    font-weight: bolder;
+    ;
 }
 
 .fontSize_medium {
@@ -40,5 +41,28 @@ body {
 }
 
 .fontSize_small {
-    font-size: 13px;
+    font-size: 12px;
+}
+
+.btn {
+    width: 120px;
+    height: 30px;
+    border: none;
+    margin-top: 30px;
+    border-radius: 100px;
+    font-family: 'pretendard', sans-serif;
+    font-weight: bold;
+    background-color: rgba(103, 80, 164, 0.2)
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 60px;
+}
+
+li {
+    margin: auto;
+    margin-bottom: 10px;
 }

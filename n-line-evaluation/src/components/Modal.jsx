@@ -2,7 +2,11 @@ import Button from "./Button";
 import { motion } from "framer-motion";
 import { modalAnimation } from "../utils/animation";
 
-function Modal() {
+function Modal(props) {
+  const closeModal = () => {
+    props.closeModal();
+  };
+
   return (
     <>
       <div className="modalContainer">
@@ -12,11 +16,9 @@ function Modal() {
           transition={modalAnimation.transition}
           className="modalBox"
         >
-          <div className="modalLogo">오류</div>
-          <div className="modalDescript fontSize_small">
-            닉네임을 입력해주세요
-          </div>
-          <Button value="확인"></Button>
+          <div className="modalLogo">{props.title}</div>
+          <div className="modalDescript fontSize_small">{props.children}</div>
+          <Button value="확인" handleButton={closeModal}></Button>
         </motion.div>
       </div>
     </>

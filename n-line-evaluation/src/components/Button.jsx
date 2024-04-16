@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 function Button(props) {
   const handleButton = () => {
     props.handleButton();

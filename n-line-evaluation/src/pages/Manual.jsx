@@ -1,10 +1,25 @@
 import { useState } from "react";
 import Button from "../components/Button";
+import { startAnimation } from "../utils/animation";
+import MotionStart from "../components/MotionStart";
+import { useNavigate } from "react-router-dom";
 
 function Manual() {
+  const navigate = useNavigate();
+
+  const goToGame = () => {
+    navigate("/Game");
+  };
+
+
   return (
     <>
-      <div className="mainContainer fontSize_title">평가 방식</div>
+          <div className="defaultContainer">
+      <MotionStart delay={0.3} className="mainContainer fontSize_title">
+        평가 방식
+      </MotionStart>
+
+      <MotionStart delay={0.35}>
       <ul className="fontSize_medium">
         <li>삼행시는 총 세번 이뤄집니다</li>
         <li>
@@ -13,10 +28,10 @@ function Manual() {
         </li>
         <li>총 합산 점수로 등수를 정합니다</li>
       </ul>
-      <div
-        className="ontSize_medium"
-        style={{ marginTop: "60px", marginBottom: "40px" }}
-      >
+      </MotionStart>
+
+      <MotionStart delay={0.34} className="fontSize_medium">
+      <div style={{ marginTop: "60px", marginBottom: "40px" }}>
         창의력을 발휘해 삼행시의{" "}
         <span
           style={{
@@ -28,7 +43,12 @@ function Manual() {
         </span>
         이 되세요!
       </div>
-      <Button value="시작"></Button>
+      </MotionStart>
+
+      <MotionStart delay={0.45}>
+      <Button value="시작" handleButton={goToGame}></Button>
+      </MotionStart>
+      </div>
     </>
   );
 }

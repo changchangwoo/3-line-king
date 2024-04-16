@@ -26,3 +26,85 @@
     text-align: center;
     font-family: 'pretendard', sans-serif;
 }
+
+.progressBar {
+    width: 75%;
+    height: 10px;
+    background-color: rgba(103, 80, 164, 0.2);
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+}
+
+.progressText {
+    margin: auto;
+    margin-bottom: 40px;
+    width: 75%;
+    text-align: right;
+    font-weight: bold;
+}
+
+.contentBox {
+    width: 75%;
+    height: 30%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contentLine {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.contentQuestion {
+    flex: 0.2;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(103, 80, 164, 0.2);
+    font-weight: bold;
+}
+
+.contentAnswer {
+    flex: 0.8;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-family: 'pretendard', sans-serif;
+    text-align: center;
+    border: none;
+}
+
+.resultLogoBox {
+    margin: auto;
+    width: 230px;
+    height: 60px;
+    margin-top: 100px;
+}
+
+.resultBox {
+    margin: auto;
+    width: 75%;
+    height: 120px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.resultDescript {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 20px;
+
+}

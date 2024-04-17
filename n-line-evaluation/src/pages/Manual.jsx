@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import MotionStart from "../components/MotionStart";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 
@@ -44,9 +45,13 @@ function Manual() {
           </MotionStart>
           <MotionStart delay={0.4}>
             <li>
-              <span onClick={handleModal} style={{ fontWeight: "bolder" }}>
+              <motion.span
+                onClick={handleModal}
+                style={{ fontWeight: "bolder" }}
+                whileHover={{ scale: 1.1, color: "rgba(103, 80, 164, 0.8)"}} // hover 시 크기를 1.1배로 키움
+              >
                 다음 기준
-              </span>
+              </motion.span>
               에 맞춰 평가됩니다
             </li>
           </MotionStart>

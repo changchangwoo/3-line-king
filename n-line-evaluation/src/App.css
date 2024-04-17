@@ -107,5 +107,14 @@
     margin: auto;
     margin-bottom: 20px;
     font-weight: bold;
-
 }
+
+.loadingView {
+    width: 25px;
+    height: 25px;
+    border : 5px solid #ccc;
+    border-top-color: rgba(103, 80, 164, 0.8);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+

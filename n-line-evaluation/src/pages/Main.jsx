@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 // import Modal from "../components/Modal";
 import MotionStart from "../components/MotionStart";
 import Modal from "../components/Modal";
+import API from "../utils/api";
 function Main() {
   const navigate = useNavigate();
   const [isModal, setIsModal] = useState(false);
@@ -13,7 +14,15 @@ function Main() {
     if (userName === "") {
       setIsModal(true);
     } else {
-      navigate("/Manual");
+      API.post("/users", {
+        name : userName
+      }).then((response) => {
+        if(response.status === 200)
+        navigate("/Manual");
+
+      }).catch((err) => {
+        console.log(err)
+      })
     }
   };
 

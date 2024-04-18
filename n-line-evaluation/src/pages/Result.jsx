@@ -4,6 +4,12 @@ import Button from "../components/Button";
 
 function Result() {
   const { state } = useLocation();
+  const navigate = useNavigate();
+
+
+  const goToRanking = () => {
+    navigate("/Ranking");
+  };
   return (
     <>
       <div className="defaultContainer">
@@ -29,8 +35,11 @@ function Result() {
           <div className="fontSize_small">현재 총 점수 : 5점</div>
         </MotionStart>
         <MotionStart delay={0.6}>
-          <Button value="다음"></Button>
+          <Button value="다시하기"></Button>
         </MotionStart>
+        <MotionStart delay={0.65}>
+          <Button value="등수확인" marginTop="10px" handleButton={goToRanking}></Button>
+        </MotionStart>  
       </div>
     </>
   );

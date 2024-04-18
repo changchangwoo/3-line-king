@@ -6,7 +6,8 @@ function Button(props) {
   };
   return (
     <>
-      <button className="btn" onClick={handleButton}>
+      <button className="btn" onClick={handleButton} 
+      style={{marginTop : props.marginTop}}>
         {props.value}
       </button>
     </>

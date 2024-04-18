@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require("express");
-const { setLine, evalLine } = require('../controller/gamesController');
+const { setLine, evalLine} = require('../controller/gamesController');
 const router = express.Router();
 
 router.use(express.json());

@@ -17,6 +17,7 @@ function Game() {
     setAnswers(newAnswers); 
   };
   const navigate = useNavigate();
+  
   const goToResult = () => {
     setLoading(true)
     let context = `\n`

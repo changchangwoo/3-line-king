@@ -24,7 +24,19 @@ const setLine = async (req, res) => {
 }
 
 const evalLine = async (req, res) => {
+    let user_id = req.cookies.idKey
+    user_id = parseInt(user_id)
     const {context} = req.body;
+    console.log(context)
+    let values = [user_id, context]
+    let sql = `INSERT INTO contexts (user_id, first) VALUES (?,?)`
+    conn.query(sql, values, (err, results) => {
+        if(err) {
+            console.log(err)
+            return
+        }
+        else console.log(results)
+    })
     let script =
     `
 - N행시란 주어진 N글자 단어의 글자로 시작하는 문장이나 문구로 이루어진 글을 말한다
@@ -48,18 +60,28 @@ const evalLine = async (req, res) => {
 }
 `
     script += context
-    console.log(script) 
+    console.log(script)
     try {
         const completion = await openai.chat.completions.create({
             messages: [{
                 role: "system", content: script
             
             }],
-            model: "gpt-4-turbo-2024-04-09",
+            model: "gpt-4-turbo",
         });
         let answer = completion.choices[0].message;
         console.log(answer.content)
         answer = JSON.parse(answer.content)
+
+        sql = `INSERT INTO scores (user_id, score1) VALUES (?,?)`
+        values = [user_id, answer.score]
+        conn.query(sql, values, (err, results) => {
+            if(err) {
+                console.log(err)
+                return
+            }
+            else console.log(results)
+        })
         return res.status(StatusCodes.OK).send(answer);
     } catch (error) {
         console.error("Error in processing request:", error);

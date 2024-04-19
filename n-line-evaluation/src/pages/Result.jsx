@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import MotionStart from "../components/MotionStart";
 import Button from "../components/Button";
+import ContentLine from "../components/ContentLine";
+import { useEffect, useState } from "react";
 
 function Result() {
   const { state } = useLocation();
+
   const navigate = useNavigate();
-
-
   const goToRanking = () => {
     navigate("/Ranking");
   };
@@ -26,7 +27,15 @@ function Result() {
           </MotionStart>
         </div>
         <MotionStart delay={0.45}>
-          <div className="resultBox"></div>
+          <div className="resultBox">
+          {state.keyWord.map((word, index) => (
+              <MotionStart key={index} delay={0.5 + (0.05 * (index + 1))} >
+          <ContentLine key={index} value={word} 
+          height={"30px"}
+          onChange={(value) => handleAnswerChange(index, value)} answer={state.answers[index]}/>
+              </MotionStart>
+            ))}
+          </div>
         </MotionStart>
         <MotionStart delay={0.5} className="resultDescript fontSize_small">
           {state.data.answer}
